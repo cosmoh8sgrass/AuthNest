@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AuthNest - Dashboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 32px;
+        max-width: 720px;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 4px;
+      }
+      button {
+        margin-top: 12px;
+        padding: 8px 16px;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        border: 1px solid #ddd;
+        padding: 12px;
+        margin-top: 8px;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .message {
+        margin-top: 8px;
+      }
+      .error {
+        color: #b00020;
+      }
+      .success {
+        color: #0a7a28;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Your Notes</h1>
+      <button id="logout-button">Log Out</button>
+    </header>
+
+    <section>
+      <h2>Add a Note</h2>
+      <form id="note-form">
+        <label>
+          Note content
+          <input type="text" id="note-content" required />
+        </label>
+        <button type="submit">Add Note</button>
+      </form>
+      <p id="note-message" class="message"></p>
+    </section>
+
+    <section>
+      <h2>My Notes</h2>
+      <ul id="notes-list"></ul>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AuthNest - Login & Signup</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 32px;
+        max-width: 720px;
+      }
+      h1 {
+        margin-bottom: 8px;
+      }
+      section {
+        border: 1px solid #ddd;
+        padding: 16px;
+        margin-top: 16px;
+      }
+      label {
+        display: block;
+        margin-top: 8px;
+      }
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 4px;
+      }
+      button {
+        margin-top: 12px;
+        padding: 8px 16px;
+      }
+      .message {
+        margin-top: 8px;
+      }
+      .error {
+        color: #b00020;
+      }
+      .success {
+        color: #0a7a28;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>AuthNest</h1>
+    <p>Simple signup and login with JWT auth.</p>
+
+    <section>
+      <h2>Sign Up</h2>
+      <form id="signup-form">
+        <label>
+          Email
+          <input type="email" id="signup-email" required />
+        </label>
+        <label>
+          Password
+          <input type="password" id="signup-password" required />
+        </label>
+        <button type="submit">Create Account</button>
+      </form>
+      <p id="signup-message" class="message"></p>
+    </section>
+
+    <section>
+      <h2>Log In</h2>
+      <form id="login-form">
+        <label>
+          Email
+          <input type="email" id="login-email" required />
+        </label>
+        <label>
+          Password
+          <input type="password" id="login-password" required />
+        </label>
+        <button type="submit">Log In</button>
+      </form>
+      <p id="login-message" class="message"></p>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

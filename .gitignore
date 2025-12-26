@@ -1,0 +1,16 @@
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+.env
+.env.local
+.env.*.local
+
+backend/*.db
+backend/*.db-journal
+backend/*.db-wal
+backend/*.db-shm
+
+.DS_Store
+Thumbs.db
