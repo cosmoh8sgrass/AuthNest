@@ -9,6 +9,15 @@ const { JWT_SECRET } = require("./auth");
 const app = express();
 const PORT = process.env.PORT || 8080;
 
+// Log unexpected errors so the process doesn't fail silently.
+process.on("uncaughtException", (err) => {
+  console.error("Uncaught exception:", err);
+});
+
+process.on("unhandledRejection", (reason) => {
+  console.error("Unhandled rejection:", reason);
+});
+
 app.use(express.json());
 
 // Simple CORS headers for local development and file:// testing.
@@ -25,6 +34,11 @@ app.use((req, res, next) => {
 // Serve the frontend so everything works from one server.
 const frontendPath = path.join(__dirname, "..", "frontend");
 app.use(express.static(frontendPath));
+
+// Basic health check for deployments.
+app.get("/", (req, res) => {
+  res.send("AuthNest server is running.");
+});
 
 // Create a new user account.
 app.post("/signup", (req, res) => {
