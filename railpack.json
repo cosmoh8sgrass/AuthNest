@@ -8,7 +8,7 @@
     "app": {
       "inputs": [
         { "step": "packages:mise" },
-        { "local": true, "include": ["backend/**", "frontend/**"] }
+        { "local": true, "include": ["backend", "frontend", "start.sh"] }
       ],
       "commands": ["cd backend && npm install"],
       "deployOutputs": []
