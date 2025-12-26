@@ -2,7 +2,7 @@ const path = require("path");
 const sqlite3 = require("sqlite3").verbose();
 
 // Create or open the local SQLite database file.
-const dbPath = path.join(__dirname, "authnest.db");
+const dbPath = process.env.DB_PATH || path.join(__dirname, "authnest.db");
 const db = new sqlite3.Database(dbPath);
 
 // Create tables if they do not exist.
