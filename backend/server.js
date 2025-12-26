@@ -7,7 +7,7 @@ const notesRouter = require("./notes");
 const { JWT_SECRET } = require("./auth");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 app.use(express.json());
 
@@ -101,6 +101,6 @@ app.post("/login", (req, res) => {
 // Protected notes routes.
 app.use("/notes", notesRouter);
 
-app.listen(PORT, () => {
-  console.log(`AuthNest server running on http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`AuthNest running on port ${PORT}`);
 });
