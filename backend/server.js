@@ -7,7 +7,7 @@ const notesRouter = require("./notes");
 const { JWT_SECRET } = require("./auth");
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5000;
 
 // Log unexpected errors so the process doesn't fail silently.
 process.on("uncaughtException", (err) => {
